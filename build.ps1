@@ -1,0 +1,1 @@
+typst compile .\src\main.typ .\buildresult\ultimatum.pdf
