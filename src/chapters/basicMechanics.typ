@@ -1,3 +1,5 @@
+#import "@preview/elsearticle:2.0.0": *
+
 == Power
 
 Power is a non negative integer, which initially is setted to 100999, displayed power percentage is an integer division of power by 1000(so it basically thousands of power value, 70123 $->$ 70%, 6709 $->$ 6%). Power decrease fully based on the power usage.
@@ -5,7 +7,7 @@ Power usage is also a non negative integer, and its in-game variable completely 
 
 === Power drain
 
-Below is power decreasing pseudocode @power:drain:fig taken directly from decompiled UCN : Recode.
+Below is power decreasing pseudocode @power:drain:fig taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/powercalc.png"),
@@ -37,7 +39,7 @@ Except power drain, your power can be changed using `Power Generator`(first tool
 
 In valilla UCN power generator just subtracts 1 from your usage, but in Recode it will be actually generate power.
 
-Below is power generator pseudocode @power:gen:fig taken directly from decompiled UCN : Recode
+Below is power generator pseudocode @power:gen:fig taken directly from decompiled UCN Recode
 
 #figure(
   image("../images/powergen.png"),
@@ -94,7 +96,7 @@ if you have 0 noice, his progress will decrease, if you have $ >0$ noice, his pr
 
 === Noice Progression
 
-So here his progress gain pseudocode @mm:gain:fig taken directly from decompiled UCN : Recode
+So here his progress gain pseudocode @mm:gain:fig taken directly from decompiled UCN Recode
 
 #figure(
   image("../images/mmincrease.png"),
@@ -110,13 +112,18 @@ In expression form (Eq. @mm:gain1:eq).
 
 $ m_1 = m_0 + 0.015n * (A I)/20 $ <mm:gain1:eq>
 
+Where:
+- $m_0$, $m_1$ - Old and new Music Man progress value.
+- $n$ - Noice value.
+- $A I$ - Music Man AI value.
+
 Using that we can define function $m^(+)(n, a)$ - Music Man progression gain on $a$ ai value, from 1 second of $n, (n>0)$ noice value(Eq. @mm:gain2:eq):
 
 $ m^(+)(n, a) = 0.015 * 60 * n * a/20 = 0.9n * a/20 $ <mm:gain2:eq>
 
 There is no difference bettween normal and hard modes for Music Man progression. 
 
-Now about decreasing his progress. Here his progress decrease pseudocodes, generic @mm:decrease:nm:fig and hard mode additional @mm:decrease:hm:fig taken directly from decompiled UCN : Recode.
+Now about decreasing his progress. Here his progress decrease pseudocodes, generic @mm:decrease:nm:fig and hard mode additional @mm:decrease:hm:fig taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/mmdecreasenm.png"),
@@ -139,17 +146,17 @@ And we can make generic functions $m(n, a)$ - Music Man with $a$ AI progression 
 $
   m_(n m)(n, a) = cases(
     -1.8"," n = 0,
-    0.9n * a/20"," n > 0
+    0.9n a/20"," n > 0
     ) \
   m_(h m)(n, a) = cases(
     -0.3"," n = 0,
-    0.9n * a/20"," n > 0
+    0.9n a/20"," n > 0
     ) 
 $ <mm:progress:eq>
 
 === Silent ventilation
 
-For silent ventilation we have different behavior for normal and hard modes. On hard mode silent ventilation is buffed, it decrease Music Man progress by a additional value. And again silent ventilation dont prevent basic Music Man progress. Here his silent ventilation progress decrease pseudocodes, generic @mm:sv:nm:fig and hard mode additional @mm:sv:hm:fig taken directly from decompiled UCN : Recode.
+For silent ventilation we have different behavior for normal and hard modes. On hard mode silent ventilation is buffed, it decrease Music Man progress by a additional value. And again silent ventilation dont prevent basic Music Man progress. Here his silent ventilation progress decrease pseudocodes, generic @mm:sv:nm:fig and hard mode additional @mm:sv:hm:fig taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/mmsvnm.png"),
@@ -166,6 +173,14 @@ We are gonna to define constants $m^(s v)_(n m)$ and $m^(s v)_(h m)$, the amount
 $ m^(s v)_(n m) = -60 * 0.015 = -0.9 \ m^(s v)_(h m) = m^(s v)_(n m) - 60 * 0.1 = -0.9 - 6 = -6.9 $ <mm:sv:eq>
 
 As we can see, silent ventilation affects REALLY more on hard mode.
+
+=== Special attack
+
+Music man also have his `Special Attack` that forces you to do silent ventilation. The conditions for that attack are:
+- Cooldown for that attack is 44-66s (32-48s on hard mode).
+- Is soon as that timer reaches 0, Music Man will start check his progress every frame. If his progress is satisfies the condition $20<=x<=80$, he will start attack, otherwise he will wait until that condition will be satisfied.
+- Timer for attack itself is 15s(10s on hard mode)
+- Music Man still progresses by noice in that attack, and silent ventilation also decrease his progress. But his progress is capped in $[20;80]$ range
 
 === Overall
 
@@ -195,7 +210,7 @@ Temperature is a decimal number capped in range of $[60; 120]$, game puhsiches y
 
 === Idle temperature
 
-Below is idle temperature increase pseudocode @temp:gain:fig taken directly from decompiled UCN : Recode.
+Below is idle temperature increase pseudocode @temp:gain:fig taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/tempincreace.png"),
@@ -208,13 +223,13 @@ So after converting units and defining only 'delta' part, we obtain the temperat
 
 $ t_(i d l e) = 0.0167 * 60 approx 1 $ <temp:gain:eq>
 
-UCN : Recode idle temperature gain is the same as in valilla UCN, 1$degree$ per second.
+UCN Recode idle temperature gain is the same as in valilla UCN, 1$degree$ per second.
 
 === AC/fan
 
 In normal mode, both AC and fan work with 1 usage and 1 noice. However in hard mode, AC power drain buffed by additional 0.5 usage(1.5 usage in total).
 
-Below is fan @temp:fan:fig and AC @temp:ac:fig temperature decrease pseudocode taken directly from decompiled UCN : Recode.
+Below is fan @temp:fan:fig and AC @temp:ac:fig temperature decrease pseudocodes taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/fantemp.png"),
@@ -230,13 +245,13 @@ In converted expressions(Eq @temp:tools:eq):
 
 $ t_(f a n) = - 0.03 * 60 = -1.8 \ t_(A C) = - 0.04 * 60 = -2.4 $ <temp:tools:eq>
 
-In normal mode AC is way better than fan. AC has the same power usage, but it cold temperature $approx 33%$ faster. However in hard more AC has 1.5 power drain, and fan becomes more effective power-wise.
+In normal mode AC is way better than fan. AC has the same power usage, but it cools temperature $approx 33%$ faster. However in hard more AC has 1.5 power drain, and fan becomes more effective power-wise.
 
 === Heater
 
 `Heater` is another temperature tool, 1 usage, 1 noice, makes your temperature rise faster.
 
-Below is heater @temp:heater:fig temperature increase pseudocode taken directly from decompiled UCN : Recode.
+Below is heater @temp:heater:fig temperature increase pseudocode taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/heatertemp.png"),
@@ -276,8 +291,7 @@ You also should know that unlike AC/Fan, idle temperature gain works with heater
 
 `Jack-O-Chica` is the main temperature controller, she will progress on high temperature values($ >=90$ on normal mode, $ >=80$ on hard more). Her progress start with 0, and each frame you have high temperature, some value will be subtract from her progress. We will jumpscare you as soon as she reach $<= -40$ progress.
 
-Below is progression subtract pseudocode for Jack-O-Chica @temp:joc:fig taken directly from decompiled UCN : Recode.
-
+Below is progression subtract pseudocode for Jack-O-Chica @temp:joc:fig taken directly from decompiled UCN Recode.
 
 #figure(
   image("../images/jackochica.png"),
@@ -291,8 +305,96 @@ Where `Alterable Value A` - Jack-O-Chica AI value, and `Alterable Value I` is a 
   caption : [Clickteam expression for calculating temperature coefficient]
 ) <temp:joc:coef:fig>
 
-There wont be such a point in outputting the progress function, Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for 10 seconds.
+There wont be such a point in analyzing the progress function, Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for 10 seconds.
 
 For hard mode you can dont use any cooling device if you are $60 degree$ on 5:30, or $70 degree$ on 5:40, for normal mode $60 degree$ on 5:20 and so on.
 
 == Lefty/GMB
+
+`Lefty` and `Global Music Box` (GMB) is the last mechanic that will be covered in this guide.
+
+Lefty progress is a value in range $[0;100]$, he kills you at $ >=100$ progress. On normal mode his progress doesnt depend on anything. However in hard mode, his progress depends on the time of his cameras last check. And you decrease his progress by using GMB tool.
+
+=== Progression
+
+Below is normal @lefty:increase:nm:fig and additional hard @lefty:increase:hm:fig modes Lefty progression pseudocodes taken directly from decompiled UCN Recode.
+
+#figure(
+  image("../images/leftyprog.png"),
+  caption : [Clickteam expression for calculating Lefty progress in normal mode]
+) <lefty:increase:nm:fig>
+
+#figure(
+  image("../images/leftyproghm.png"),
+  caption : [Clickteam expression for calculating Lefty progress in hard mode]
+) <lefty:increase:hm:fig>
+
+Where:
+- `Alterable Value A("Lefty")` - Lefty AI value.
+- `Alterable Value E("Lefty")` - Lefty progress.
+- `Alterable Value F("Lefty")` - Time in frames since last lefty cam check.
+
+Hard mode code increases progress additionaly with normal mode, that means in hard mode he has normal mode progress @lefty:increase:nm:fig + hard mode 'watch' progress @lefty:increase:hm:fig. In terms of expressions for normal mode(Eq. @lefty:increase:nm:eq) and additional hard mode(Eq. @lefty:increase:hm:eq).
+
+$ 
+l_1 = l_0 + 0.024 * (A I)/20 #<lefty:increase:nm:eq> \ 
+l_1 = l_0 + 0.01 * t_l/600 * (A I)/20 #<lefty:increase:hm:eq>
+$ <lefty:increase:eq>
+
+Where:
+- $l_0$, $l_1$ - Old and new Lefty progress value.
+- $A I$ - Lefty AI value.
+- $t_l$ - Time in frames since last Lefty cam check.
+
+For normal mode it is easy to define a function $l^+_(h m)(a)$ - Lefty on $a$ AI value progression gain for 1 second on normal mode (Eq. @lefty:increase:nm2:eq)
+
+$ l_(n m)(a) = 0.024 * a/20 * 60 = 1.44 a/20 $ <lefty:increase:nm2:eq>
+
+But for hard mode it is not so trivial, his hard mode progress scales non-linearly if you dont watch him. However we can calculate how many progress he will gain for $f$ frames if you dont watch him, so you just sum all all frames progression with increase $t_l$(Eq. @lefty:increase:hm2:eq). 
+
+$ sum_(i=1)^f (0.01 * i/600 * a/20) = \ = a/20 * 0.01 / 600 * sum_(i=1)^f i = \ = a/20 * 0.01 / 600 * (f(f+1))/2 $ <lefty:increase:hm2:eq>
+
+And then convert it to seconds(Eq. @lefty:increase:hm3:eq). 
+
+$ l_(h m)(a, s) = a/20 * 0.01 / 600 * (60s(60s+1))/2 = \ = a/20 * 0.001 * (s(60s+1))/2 = \ = 0.0005 * a/20 * s(60s+1) $ <lefty:increase:hm3:eq>
+
+And we can define $l_(h m)(a, s)$ total progress for lefty on $a$ AI value, if you dont watch him for $s$ seconds on hard mode(sum of normal progress + additional)(Eq. @lefty:increase:hm4:eq)
+
+$ l_(h m)(a, s) = s * l_(n m)(a) + l_(h m)(a, s) = \ = 1.44 a/20 + 0.0005 * a/20 * s(60s+1) = \ = a/20 (1.44 + 0.0005 s(60s+1)) $ <lefty:increase:hm4:eq>
+
+=== GMB
+
+To decrease his progress, you use GMB tool, it takes 1 usage, stops lefty from his progression, and starts to decrease his progress.
+
+Here is GMB decrease pseudocodes @lefty:gmb:fig taken directly from decompiled UCN Recode.
+
+#figure(
+  image("../images/leftygmb.png"),
+  caption : [Clickteam expression for calculating GMB progress decrease]
+) <lefty:gmb:fig>
+
+In expression form(Eq. @lefty:gmb:eq):
+
+$ l_1 = l_0 - 0.06$ <lefty:gmb:eq>
+
+And final constant $l_(g m b)$, GMB progress decrease for 1 second:
+
+$ l_(g m b) = 60 * 0.06 = 3.6$
+
+=== Stages
+
+Lefty has 6 different visual stages of his progression @lefty:stages:fig:
+
+#subfigure(
+  figure(image("../images/leftystage1.png"), caption: [1 stage, $[0;16.66]$ progress], ),
+  figure(image("../images/leftystage2.png"), caption: [2 stage, $[16.66;32.33]$ progress]),
+  figure(image("../images/leftystage3.png"), caption: [3 stage, $[32.33;50]$ progress]),
+  figure(image("../images/leftystage4.png"), caption: [4 stage, $[50;66.66]$ progress]),
+  figure(image("../images/leftystage5.png"), caption: [5 stage, $[66.66;83.33]$ progress]),
+  figure(image("../images/leftystage6.png"), caption: [6 stage, $[83.33;100]$ progress]),
+  columns: (1fr, 1fr, 1fr),
+  caption: [All lefty stages and corresponding them progress value],
+  label: <lefty:stages:fig>,
+)
+
+To progress for 1 stage, Lefty needs to gain 16.66 progress. On normal mode on 20 AI it will take $16.66/(l_(n m)(20)) = 16.66 / 1.44 approx 11.57$

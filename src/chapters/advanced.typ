@@ -1,4 +1,3 @@
-
 == Linear power drain
 
 The more interesting property of power drain function, that is fully linear with respect to usage(it have form $p(u)= k * u$) this implies some properties you probably should know.
@@ -37,5 +36,9 @@ We simplyfy the expresison, and got an answer independent of $x$, using only fac
 
 So overall in Recode we shouldn't care about high usage at all, problem with energy will be if you bad with opening doors timings or overusing tools (using gmb when lefty has 0 progress, AC/fan when temp is 60)
 
+== Power generator is useless
 
+== Music Man abuse (Power generator is NOT useless)
+
+== 5 AM power optimizations
 
