@@ -1,3 +1,4 @@
+#import "@preview/elsearticle:2.0.0": *
 == Linear power drain
 
 The more interesting property of power drain function, that is fully linear with respect to usage(it have form $p(u)= k * u$) this implies some properties you probably should know.

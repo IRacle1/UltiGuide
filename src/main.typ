@@ -27,9 +27,13 @@ While understanding the strategies in this guide doesnt require any special know
 
 the first chapter will include basic game breakdown, how everything works at a numerical level. The second chapter will use the material from the first chapter to derive and substantiate the key hypotheses needed for the strategies itself. And the third chapter includes the strategies themselves. If youre not interested in formulas, conclusions, and proofs, you can skip straight to that chapter(but know that Ill be sad 😭😭😭).
 
-= Basic Mechanics
+= Basic mechanics
 
 #include "chapters/basicMechanics.typ"
+
+= Advanced tricks
+
+#include "chapters/advanced.typ"
 
 = Section 1
 

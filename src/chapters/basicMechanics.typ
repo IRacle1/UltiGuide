@@ -334,11 +334,11 @@ Where:
 - `Alterable Value E("Lefty")` - Lefty progress.
 - `Alterable Value F("Lefty")` - Time in frames since last lefty cam check.
 
-Hard mode code increases progress additionaly with normal mode, that means in hard mode he has normal mode progress @lefty:increase:nm:fig + hard mode 'watch' progress @lefty:increase:hm:fig. In terms of expressions for normal mode(Eq. @lefty:increase:nm:eq) and additional hard mode(Eq. @lefty:increase:hm:eq).
+Hard mode code increases progress additionaly with normal mode, that means in hard mode he has normal mode progress @lefty:increase:nm:fig + hard mode 'watch' progress @lefty:increase:hm:fig. In terms of expressions for normal mode and additional hard mode(Eq. @lefty:increase:eq).
 
 $ 
-l_1 = l_0 + 0.024 * (A I)/20 #<lefty:increase:nm:eq> \ 
-l_1 = l_0 + 0.01 * t_l/600 * (A I)/20 #<lefty:increase:hm:eq>
+l_1 = l_0 + 0.024 * (A I)/20 \ 
+l_1 = l_0 + 0.01 * t_l/600 * (A I)/20
 $ <lefty:increase:eq>
 
 Where:
@@ -375,11 +375,11 @@ Here is GMB decrease pseudocodes @lefty:gmb:fig taken directly from decompiled U
 
 In expression form(Eq. @lefty:gmb:eq):
 
-$ l_1 = l_0 - 0.06$ <lefty:gmb:eq>
+$ l_1 = l_0 - 0.06 $ <lefty:gmb:eq>
 
 And final constant $l_(g m b)$, GMB progress decrease for 1 second:
 
-$ l_(g m b) = 60 * 0.06 = 3.6$
+$ l_(g m b) = 60 * 0.06 = 3.6 $
 
 === Stages
 
