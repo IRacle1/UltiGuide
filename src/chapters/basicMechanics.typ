@@ -22,14 +22,14 @@ Where:
 
 We can write down the expression more clearly (see Eq. @power:drain1:eq).
 
-$ p_(n e w) = p_(o l d) - 4.1u(1 - h m * 0.05) $ <power:drain1:eq>
+$ p_(n e w) = p_(o l d) - 4.1u(1 - h m dot 0.05) $ <power:drain1:eq>
 
 But to properly work with power drains, it will be easier to extract from expression only 'removing' part, and use it define a function $p(u)$ - the amount of power drained for 1 second with $u$ usage. Clickteam expression performs every frame, and power is also not in percentage units, so we need to converts units (multiply by 60 for seconds, divide by 1000 for power percentage). Also we can separete normal and hard mores power drains.
 
 With all of that we got (see Eq. @power:drain:nm:eq, @power:drain:hm:eq).
 
-$ p_(h m)(u) = -4.1u * (0.95 * 60) / 1000 = -0.2337u $ <power:drain:nm:eq>
-$ p_(n m)(u) =- 4.1u * 60 / 1000 = -0.246u $ <power:drain:hm:eq>
+$ p_(h m)(u) = -4.1u dot (0.95 dot 60) / 1000 = -0.2337u $ <power:drain:nm:eq>
+$ p_(n m)(u) =- 4.1u dot 60 / 1000 = -0.246u $ <power:drain:hm:eq>
 
 For example for 1 usage for 1 second in hard more we will drain $p_(h m)(1) = 0.2337 approx 0.25%$ power, with is pretty accurate.
 
@@ -54,7 +54,7 @@ $ p_(n e w) = p_(o l d) + 4.5 / 5 $ <powen:gen1:eq>
 
 And the same way converting units, we will get amount or energy power gen will generate for 1 second (see Eq. @powen:gen2:eq).
 
-$ p g = 4.5 / 5 * 60 / 1000 = 0.054 $ <powen:gen2:eq>
+$ p_(g e n) = 4.5 / 5 dot 60 / 1000 = 0.054 $ <powen:gen2:eq>
 
 Pretty low, $approx 4.5$ times lower than power drain with 1 usage. We use a single value instead of function because power generator is not depends on anything at all.
 
@@ -70,7 +70,7 @@ Pretty low, $approx 4.5$ times lower than power drain with 1 usage. We use a sin
     [*1 usage + PG (HM)*],
     [*2 usage*],
   ),
-  [$p_(n m)(0)$], [$p_(n m)(1)$], [$p g$], [$p g + p_(h m)(1)$], [$p_(n m)(2)$],
+  [$p_(n m)(0)$], [$p_(n m)(1)$], [$p_(g e n)$], [$p_(g e n) + p_(h m)(1)$], [$p_(n m)(2)$],
   [$0%$], [$-0.246%$], [$0.054%$], [$0.054 - 0.2337 = -0.1797%$], [$-0.492%$],
 )
 }
@@ -110,7 +110,7 @@ where:
 
 In expression form (Eq. @mm:gain1:eq).
 
-$ m_1 = m_0 + 0.015n * (A I)/20 $ <mm:gain1:eq>
+$ m_1 = m_0 + 0.015n dot (A I)/20 $ <mm:gain1:eq>
 
 Where:
 - $m_0$, $m_1$ - Old and new Music Man progress value.
@@ -119,7 +119,7 @@ Where:
 
 Using that we can define function $m^(+)(n, a)$ - Music Man progression gain on $a$ ai value, from 1 second of $n, (n>0)$ noice value(Eq. @mm:gain2:eq):
 
-$ m^(+)(n, a) = 0.015 * 60 * n * a/20 = 0.9n * a/20 $ <mm:gain2:eq>
+$ m^(+)(n, a) = 0.015 dot 60 dot n dot a/20 = 0.9n dot a/20 $ <mm:gain2:eq>
 
 There is no difference bettween normal and hard modes for Music Man progression. 
 
@@ -139,7 +139,7 @@ On hard mode Music Man has progress decrease nerf, so in hard mode code it addit
 
 We are gonna to define constants $m^(-)_(n m)$ and $m^(-)_(h m)$, the amount of Music Man progress decrease (with 0 noice) for 1 seconds on normal and hard modes respectively(Eq. @mm:decrease:eq).
 
-$ m^(-)_(n m) = -60 * 0.03 = -1.8 \ m^(-)_(h m) = m^(-)_(n m) + 60 * 0.025 = -1.8 + 1.5 = -0.3 $ <mm:decrease:eq>
+$ m^(-)_(n m) = -60 dot 0.03 = -1.8 \ m^(-)_(h m) = m^(-)_(n m) + 60 dot 0.025 = -1.8 + 1.5 = -0.3 $ <mm:decrease:eq>
 
 And we can make generic functions $m(n, a)$ - Music Man with $a$ AI progression change for 1 second with $n$ noice for normal and hard modes(Eq. @mm:progress:eq).
 
@@ -170,7 +170,7 @@ For silent ventilation we have different behavior for normal and hard modes. On 
 
 We are gonna to define constants $m^(s v)_(n m)$ and $m^(s v)_(h m)$, the amount of Music Man progress decrease with silent ventilation for 1 seconds on normal and hard modes respectively(Eq. @mm:sv:eq).
 
-$ m^(s v)_(n m) = -60 * 0.015 = -0.9 \ m^(s v)_(h m) = m^(s v)_(n m) - 60 * 0.1 = -0.9 - 6 = -6.9 $ <mm:sv:eq>
+$ m^(s v)_(n m) = -60 dot 0.015 = -0.9 \ m^(s v)_(h m) = m^(s v)_(n m) - 60 dot 0.1 = -0.9 - 6 = -6.9 $ <mm:sv:eq>
 
 As we can see, silent ventilation affects REALLY more on hard mode.
 
@@ -221,7 +221,7 @@ Below is idle temperature increase pseudocode @temp:gain:fig taken directly from
 
 So after converting units and defining only 'delta' part, we obtain the temperature change in 1 second. (Eq. @temp:gain:eq).
 
-$ t_(i d l e) = 0.0167 * 60 approx 1 $ <temp:gain:eq>
+$ t_(i d l e) = 0.0167 dot 60 approx 1 $ <temp:gain:eq>
 
 UCN Recode idle temperature gain is the same as in valilla UCN, 1$degree$ per second.
 
@@ -243,7 +243,7 @@ Below is fan @temp:fan:fig and AC @temp:ac:fig temperature decrease pseudocodes 
 
 In converted expressions(Eq @temp:tools:eq):
 
-$ t_(f a n) = - 0.03 * 60 = -1.8 \ t_(A C) = - 0.04 * 60 = -2.4 $ <temp:tools:eq>
+$ t_(f a n) = - 0.03 dot 60 = -1.8 \ t_(A C) = - 0.04 dot 60 = -2.4 $ <temp:tools:eq>
 
 In normal mode AC is way better than fan. AC has the same power usage, but it cools temperature $approx 33%$ faster. However in hard more AC has 1.5 power drain, and fan becomes more effective power-wise.
 
@@ -260,7 +260,7 @@ Below is heater @temp:heater:fig temperature increase pseudocode taken directly 
 
 In converted expressions(Eq @temp:heater:eq):
 
-$ t_(h e a t) = 0.02 * 60 = 1.2 $ <temp:heater:eq>
+$ t_(h e a t) = 0.02 dot 60 = 1.2 $ <temp:heater:eq>
 
 You also should know that unlike AC/Fan, idle temperature gain works with heater, so you get combined gain.
 
@@ -337,8 +337,8 @@ Where:
 Hard mode code increases progress additionaly with normal mode, that means in hard mode he has normal mode progress @lefty:increase:nm:fig + hard mode 'watch' progress @lefty:increase:hm:fig. In terms of expressions for normal mode and additional hard mode(Eq. @lefty:increase:eq).
 
 $ 
-l_1 = l_0 + 0.024 * (A I)/20 \ 
-l_1 = l_0 + 0.01 * t_l/600 * (A I)/20
+l_1 = l_0 + 0.024 dot (A I)/20 \ 
+l_1 = l_0 + 0.01 dot t_l/600 dot (A I)/20
 $ <lefty:increase:eq>
 
 Where:
@@ -348,19 +348,19 @@ Where:
 
 For normal mode it is easy to define a function $l^+_(h m)(a)$ - Lefty on $a$ AI value progression gain for 1 second on normal mode (Eq. @lefty:increase:nm2:eq)
 
-$ l_(n m)(a) = 0.024 * a/20 * 60 = 1.44 a/20 $ <lefty:increase:nm2:eq>
+$ l_(n m)(a) = 0.024 dot a/20 dot 60 = 1.44 a/20 $ <lefty:increase:nm2:eq>
 
 But for hard mode it is not so trivial, his hard mode progress scales non-linearly if you dont watch him. However we can calculate how many progress he will gain for $f$ frames if you dont watch him, so you just sum all all frames progression with increase $t_l$(Eq. @lefty:increase:hm2:eq). 
 
-$ sum_(i=1)^f (0.01 * i/600 * a/20) = \ = a/20 * 0.01 / 600 * sum_(i=1)^f i = \ = a/20 * 0.01 / 600 * (f(f+1))/2 $ <lefty:increase:hm2:eq>
+$ l^p_(h m)(a, s) = sum_(i=1)^f (0.01 dot i/600 dot a/20) = \ = a/20 dot 0.01 / 600 dot sum_(i=1)^f i = \ = a/20 dot 0.01 / 600 dot (f(f+1))/2 $ <lefty:increase:hm2:eq>
 
-And then convert it to seconds(Eq. @lefty:increase:hm3:eq). 
+And then convert it to seconds, and define it as $l^p_(h m)(a, s)$, amount of additional Lefty on $a$ AI value progress on hard mode for $s$ seconds of no watching him(Eq. @lefty:increase:hm3:eq). 
 
-$ l_(h m)(a, s) = a/20 * 0.01 / 600 * (60s(60s+1))/2 = \ = a/20 * 0.001 * (s(60s+1))/2 = \ = 0.0005 * a/20 * s(60s+1) $ <lefty:increase:hm3:eq>
+$ l^p_(h m)(a, s) = a/20 dot 0.01 / 600 dot (60s(60s+1))/2 = \ = a/20 dot 0.001 dot (s(60s+1))/2 = \ = 0.0005 dot a/20 dot s(60s+1) $ <lefty:increase:hm3:eq>
 
-And we can define $l_(h m)(a, s)$ total progress for lefty on $a$ AI value, if you dont watch him for $s$ seconds on hard mode(sum of normal progress + additional)(Eq. @lefty:increase:hm4:eq)
+And we can define $l_(h m)(a, s)$, total progress for lefty on $a$ AI value on hard mode, for $s$ seconds of no watching him(sum of normal progress + additional)(Eq. @lefty:increase:hm4:eq)
 
-$ l_(h m)(a, s) = s * l_(n m)(a) + l_(h m)(a, s) = \ = 1.44 a/20 + 0.0005 * a/20 * s(60s+1) = \ = a/20 (1.44 + 0.0005 s(60s+1)) $ <lefty:increase:hm4:eq>
+$ l_(h m)(a, s) = s dot l_(n m)(a) + l^p_(h m)(a, s) = \ = 1.44 a/20 + 0.0005 dot a/20 dot s(60s+1) = \ = a/20 (1.44 + 0.0005 s(60s+1)) $ <lefty:increase:hm4:eq>
 
 === GMB
 
@@ -379,7 +379,7 @@ $ l_1 = l_0 - 0.06 $ <lefty:gmb:eq>
 
 And final constant $l_(g m b)$, GMB progress decrease for 1 second:
 
-$ l_(g m b) = 60 * 0.06 = 3.6 $
+$ l_(g m b) = -60 dot 0.06 = -3.6 $
 
 === Stages
 
@@ -398,3 +398,53 @@ Lefty has 6 different visual stages of his progression @lefty:stages:fig:
 )
 
 To progress for 1 stage, Lefty needs to gain 16.66 progress. On normal mode on 20 AI it will take $16.66/(l_(n m)(20)) = 16.66 / 1.44 approx 11.57$
+
+== All equations
+
+Power percentage drain for 1 second for $u$ usage(Eq. @all:power:drain:eq)
+$ 
+p_(h m)(u) = -0.2337u \
+p_(n m)(u) = -0.246u 
+$ <all:power:drain:eq>
+
+Power percentage gain for 1 second with power generator(Eq. @all:power:pg:eq)
+
+$ p_(g e n) = 0.054 $ <all:power:pg:eq>
+
+Music Man with $a$ AI value sound progression for 1 second with $n$ noice(Eq. @all:noice:mmp:eq)
+
+$
+m_(n m)(n, a) = cases(
+  -1.8"," n = 0,
+  0.9n a/20"," n > 0
+  ) \
+m_(h m)(n, a) = cases(
+  -0.3"," n = 0,
+  0.9n a/20"," n > 0
+  )
+$ <all:noice:mmp:eq>
+
+Music Man progression decrease for 1 second with silent ventilation(Eq. @all:noice:sv:eq)
+
+$ m^(s v)_(n m) = -0.9 \ m^(s v)_(h m) = -6.9 $ <all:noice:sv:eq>
+
+Temperature change for 1 second with different tools(Eq. @all:temp:tools:eq)
+
+$ 
+t_(i d l e) = 1 \ 
+t_(f a n) = -1.8 \ 
+t_(A C) = -2.4 \
+t_(h e a t) = 1.2 \
+$ <all:temp:tools:eq>
+
+Lefty with $a$ AI value progress for 1 second on normal mode(Eq. @all:lefty:nm:eq)
+
+$ l_(n m)(a) = 0.024 dot a/20 dot 60 = 1.44 a/20 $ <all:lefty:nm:eq>
+
+Lefty with $a$ AI value progress for $s$ second oh not watchging him on hard mode(Eq. @all:lefty:hm:eq)
+
+$ l_(h m)(a, s) = a/20 (1.44 + 0.0005 s(60s+1)) $ <all:lefty:hm:eq>
+
+Lefty progress decrease with GMB for 1 second(Eq. @all:lefty:gmb:eq)
+
+$ l_(g m b) = -3.6 $ <all:lefty:gmb:eq>
