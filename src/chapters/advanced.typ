@@ -54,15 +54,29 @@ And then amount of power we will lost from SV will be $t_(s v) dot p_(h m)(1)$. 
 $ t_(g e n) dot p_(g e n) = 0.054t_(g e n) $ <pgenus:pgtotal:eq>
 $ t_(s v) dot p_(h m)(1) = -(p_(h m)(1) dot t_(g e n) dot m_(h m)(2, 20))/(m^(s v)_(h m)) =\ = -(-0.2337t dot 1.8)/(-6.9) approx - 0.061t $<pgenus:svtotal:eq>
 
-We got that power drain for SV exceeds PG. However Music Man has progress decrease when there is no noice, maybe it helps decreasing Music Man progress? Well, no. If you play without PG and fan, using AC for coolingm, making minimal noice, playing perfectly with Lolbit and Phone Guy, Music Man still will be progress by AC noice. His calming down on hard mode is disproportionately small, compared to the progress gain. So there is no way to globally calm MM without using SV.
-
-That fact already makes 'old' strategy unoptimal powerwise. 
+We got that power drain for SV exceeds PG. However Music Man has progress decrease when there is no noice, maybe it helps decreasing Music Man progress? Well, no. If you play without PG and fan, using AC for coolingm, making minimal noice, playing perfectly with Lolbit and Phone Guy, Music Man still will be progress by AC noice. His calming down on hard mode is disproportionately small, compared to the progress gain. So there is no way to globally calm MM without using SV. That fact already makes 'old' strategy unoptimal powerwise. 
 
 But this doesnt completely mean that PG is useless. It becomes useless when the player forced to calm down the Music Man using SV. The most optimal strategy for using PG is to use it only as much as necessary to avoid getting Music Man to his max aggression until the end of the night, using SV only for his special attacks.
 
 == Music Man abuse
 
+From the previous paragraph you learned that many conditions are needed for the rational use of PG. But there is another advanced technique that allows you to make as much noise as you want without any Music Man progression. 
+
+There is one thing during his special attack, progress cap in $[20;80]$ range. So if Music Man is on 20 progress, you cant lower that value until you counter his special attack. And its the same for 80 progression. Вuring his special attack, regardless of the noise level, progress wont go up above 80. Therefore, the point of 'Music Man abuse' is to use noise tools(mainly PG + Fan) to the maximum during this time without any consequences, with perfect execution and rng, you can generate up to $10p_(g e n) = 0.54$ enegry.
+
+It sounds simple, but in reality it will be difficult to do this in a regular run.
+
+In addition, i consider 2 types of use of this technique - single use and constant throughout the night:
+- In the first case you play night like normal, knowing that MM progresses over time, you can only make one abuse at the end of the night, this gives an obvious advantage compared to not making this abuse. 
+- In second case case, the strategy is to get to 80 Muisc Man progress as quickly as possible, and then abuse every special attack. The problem is that after each special attack you will have to use SV, for making next abuse possible, and it is a very good question whether the abuse in the long term gives more energy than you spend on SV. (Im too lazy to calculate it, and in general playing with such a strategy is much more difficult)
+
 == 5 AM power optimizations
+
+=== Lefty
+
+=== Jack-O-Chica
+
+=== General
 
 == Powerpace formula
 

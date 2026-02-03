@@ -176,9 +176,9 @@ As we can see, silent ventilation affects REALLY more on hard mode.
 
 === Special attack
 
-Music man also have his `Special Attack` that forces you to do silent ventilation. The conditions for that attack are:
+Music man also have his `Special Attack` that forces you to do silent ventilation for 1 second. The attack details are:
 - Cooldown for that attack is 44-66s (32-48s on hard mode).
-- Is soon as that timer reaches 0, Music Man will start check his progress every frame. If his progress is satisfies the condition $20<=x<=80$, he will start attack, otherwise he will wait until that condition will be satisfied.
+- Is soon as that timer reaches 0, Music Man will start check his progress every frame. If his progress is in $[20;80]$ range, he will start attack, otherwise he will wait until that condition will be satisfied.
 - Timer for attack itself is 15s(10s on hard mode)
 - Music Man still progresses by noice in that attack, and silent ventilation also decrease his progress. But his progress is capped in $[20;80]$ range
 
@@ -193,7 +193,7 @@ Music man also have his `Special Attack` that forces you to do silent ventilatio
     [*1 noice (HM)*],
     [*2 noice + SV (HM)*],
   ),
-  [$m_(n m)(0, 20)$], [$m_(h m)(0, 20)$], [$m_(n m)(1, 20)$], [$m_(h m)(2, 20) + m^(s v)_(h m)$],
+  [$m_(n m)(0, 20)$], [$m_(h m)(0, 20)$], [$m_(h m)(1, 20)$], [$m_(h m)(2, 20) + m^(s v)_(h m)$],
   [$-1.8$], [$-0.3$], [$0.9$], [$1.8 - 6.9 = -5.1$],
 )
 }
@@ -289,25 +289,11 @@ You also should know that unlike AC/Fan, idle temperature gain works with heater
 
 === Jack-O-Chica
 
-`Jack-O-Chica` is the main temperature controller, she will progress on high temperature values($ >=90$ on normal mode, $ >=80$ on hard more). Her progress start with 0, and each frame you have high temperature, some value will be subtract from her progress. We will jumpscare you as soon as she reach $<= -40$ progress.
+`Jack-O-Chica` is the main temperature controller, she will progress on high temperature values($ >=90$ on normal mode, $ >=80$ on hard more) and kills you when you reach a certain progress.
 
-Below is progression subtract pseudocode for Jack-O-Chica @temp:joc:fig taken directly from decompiled UCN Recode.
+There wont be such a point in analyzing the progress function, the only thing you need to know is that its progression is not constant and depends only on temperature. When the temperature of progress is reached, she will progress differently: the higher the temperature, the higher the progress.
 
-#figure(
-  image("../images/jackochica.png"),
-  caption : [Clickteam expression for calculating Jack-O-Chica progress]
-) <temp:joc:fig>
-
-Where `Alterable Value A` - Jack-O-Chica AI value, and `Alterable Value I` is a some temperature coefficient @temp:joc:coef:fig, which is equal to $(t - 59)/60 + 1$.
-
-#figure(
-  image("../images/tempcoef.png"),
-  caption : [Clickteam expression for calculating temperature coefficient]
-) <temp:joc:coef:fig>
-
-There wont be such a point in analyzing the progress function, Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for 10 seconds.
-
-For hard mode you can dont use any cooling device if you are $60 degree$ on 5:30, or $70 degree$ on 5:40, for normal mode $60 degree$ on 5:20 and so on.
+Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for 10 seconds.
 
 == Lefty/GMB
 
@@ -397,7 +383,7 @@ Lefty has 6 different visual stages of his progression @lefty:stages:fig:
   label: <lefty:stages:fig>,
 )
 
-To progress for 1 stage, Lefty needs to gain 16.66 progress. On normal mode on 20 AI it will take $16.66/(l_(n m)(20)) = 16.66 / 1.44 approx 11.57$
+To progress for 1 stage, Lefty needs to gain 16.66 progress. On normal mode on 20 AI it will take $16.66/(l_(n m)(20)) = 16.66 / 1.44 approx 11.57$. And to decrease 1 stage with GMB, you will need $16.66/l_(g m b) = 16.66 / 3.6 = approx 4.63 $
 
 == All equations
 

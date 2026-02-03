@@ -25,7 +25,7 @@ This guide, written more for fun, breaks down all the information needed to unde
 
 While understanding the strategies in this guide doesnt require any special knowledge, understanding proofs for some strats may require some basic math skills(But you can just ignore the proofs and take my word for it that everything in this guide is true).
 
-the first chapter will include basic game breakdown, how everything works at a numerical level. The second chapter will use the material from the first chapter to derive and substantiate the key hypotheses needed for the strategies itself. And the third chapter includes the strategies themselves. If youre not interested in formulas, conclusions, and proofs, you can skip straight to that chapter(but know that Ill be sad 😭😭😭).
+the first chapter will include basic game breakdown, how everything works at a numerical level. The second chapter will use the material from the first chapter to derive and substantiate the key hypotheses needed for the strategies itself, if youre not interested in formulas, conclusions, and proofs, you can skip straight to that chapter(but know that Ill be sad 😭😭😭). And the third chapter includes the strategies themselves.
 
 = Basic mechanics
 
