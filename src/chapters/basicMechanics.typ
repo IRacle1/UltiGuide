@@ -374,7 +374,7 @@ Lefty has 6 different visual stages of his progression @lefty:stages:fig:
   label: <lefty:stages:fig>,
 )
 
-To progress for 1 stage, Lefty needs to gain 16.66 progress. On normal mode on 20 AI it will take $16.66/(l_(n m)(20)) = 16.66 / 1.44 approx 11.57$. And to decrease 1 stage with GMB, you will need $16.66/l_(g m b) = 16.66 / 3.6 = approx 4.63 $
+To progress for 1 stage, Lefty needs to gain 16.66 progress. On normal mode on 20 AI it will take $16.66/(l_(n m)(20)) = 16.66 / 1.44 approx 11.57$ seconds. And to decrease 1 stage with GMB, you will need $16.66/l_(g m b) = 16.66 / 3.6 = approx 4.63 $ seconds
 
 == All equations
 

@@ -77,31 +77,59 @@ and finally we can calculate power drain(in hard mode ofc), Fan takes 1 power dr
 $ p_(f a n) = p_(h m)(s_(f a n)) approx -28.57 $ <nofan:fananswer>
 $ p_(a c) = 1.5 dot p_(h m)(s_(a c)) approx -35 $ <nofan:acanswer>
 
-We get difference is about 8%. Actially Ultimatum No Fan is around 7-8% Ultimatum greenrun.
+We get difference is about 7.5%. Actially Ultimatum No Fan is around 6-7% Ultimatum greenrun.
 
 Also Power Generator is kinda useless in that self imposed. The most efficent way to use PG it combine it with Fan, and you cant do that in No Fan. You can use PG only at the start.
 
+In general i dont like that challenge, because it affects only greenruning, but No Fan can be a build up for a bigger fish.
+
+#link("https://www.youtube.com/watch?v=yLxxLwFyaOw")[
+  NF NPG demonstration (by serdnALof)
+]
+
 === Phone Guy All Night (NPG)
 
+The formal hardest single self imposed Ultimatum challenge. I dont recommend you to try it if you have $lt 12%$ greenrun PB. 
 
+So core part of that challenge is to dont mute Phone Guy call, which makes you get passive +1 noise value and annoying Phone Guy sound for entire night. That moves Music Man from C tier to a SS+, making him a hardest animatronic. Core of tool cycle doesnt change, but you forced to deal with Music Man like he is the second Lefty. And overall tools become extremly tight. There is two main ways to calm Music Man: Using Fan mainly with SV, or mainly with GMB. You can chose your own way to deal with Music Man, but for me it is better to use `[Fan + SV]`, because with 2 noise value Music Man can kill you pretty fast. However combining Fan with tools doesnt make Ultimatum PGAN tool management free like in regular Ultimatum. Most of situations will require you to think and analyze Lefty/Music Man/Temperature pace and use whatever you need. I highly recommend you to keep Lefty at stage 2-3 most of the time, because there will be tight situations with Music Man special attack and other gameplay.
+
+And there are specific thing about Music Man abusing. Firstly, you are forced to do abuses due to impossible power, so you cant just use SV for 10 second once per hour. And second, in PGAN Music Man special attack doent just happends like in Ultimatum greenruns. Most of time time Music Man progress will be $80+$, and it will stall his attack. You cant keep Music Man at lower progress values, in that case abuse dont give you any power profit. You should have mental timer to know if Music Man can start his attack, counter any tool threads like Lefty, heater ducts, Rockstar Freddy and others, and start his attack by lowering his progress below 80. In that moment dont overuse SV too much, or you counter Music Man instantly.
+
+At the beginning of the night you should use PG for 2-3 seconds(skipping first MM abuse because it gives disadvantage in PGAN). Phone Guy should spawn in $22-42$ second, forcing first Music Man special attack after. During that attack you can use PG a little. After that, there will be a filler part that plays exactly like a base Ultimatum, until MM reaches 80 progress. This is where the difficulty begins, and what I described below. Its better to catch each MM abuse as quickly as possible and use PG to the maximum during that time. This is basically all you need to know about strategy.
+
+
+#link("https://youtu.be/cmuSKUMm8p8")[
+  PGAN demonstration (by me😈😈)
+]
+
+PGAN NPG gameplay wise is the same, buffing only greenrun part. Do the same thing as you do in regular PGAN but without PG xd. Anyway you should do Music Man abuses as well because they like frezee his progresson. PGAN NPG actually not so difficult comparing to PGAN.
+
+#link("https://youtu.be/9lcPFgyNPCU")[
+  PGAN NPG demonstration (by me😈😈)
+]
 
 == Difficulties
 
+I will define `ulti x`, as Ultimatum with $x%$ greenrun using greenrun strategy.
+
+Greenrun difficulty $eq.not$ overall difficulty.
+
 === Greenrun
 
-I will defile `ulti x`, as *greenrun-wise* difficulty to beat Ultimatum with x percent greenrun using greenrun strategy. Greenrun difficulty $eq.not$ overall difficulty.
+Objectively calculated strats/self imposeds greenrun based on Ultimatum greenrun stategy.
 
-So there: 
+So there(from easiest to hardest): 
 - `ulti 0`
 - `ulti old strat (= ulti 1)`
-- `ulti npg (= ulti 2-3)`
-- `ulti baseline (= ulti 4)` - _average Ultimatum gameplay without mistakes._
-- `ulti nf (= ulti 7-8)`
-- `ulti nf npg (= ulti 8-9)`
+- `ulti npg (= ulti 2)`
+- `ulti nf (= ulti 6)`
+- `ulti nf npg (= ulti 7)`
 - `ulti pgan (= ulti 11-12)`
 - `ulti pgan npg (= ulti 13-14)`
 
 === Overall
+
+Human-like comparing strategies/self imposeds difficulties.
 
 Defenitions:
 - $approx$ - Basically the same difficulty.
@@ -109,6 +137,6 @@ Defenitions:
 - $lt$ - Significatly harder.
 - $lt.double$ - Way harder. 
 
-And overall difficulties:
+And overall difficulties from easiest to hardest:
 
-`ulti npg` $lt.tilde$ `ulti baseline` $lt$ `ulti nf` $approx$ `ulti nf npg` $approx$ `ulti 8` $lt.double$ `ulti 12` $lt.double$ `ulti pgan` $lt.tilde$ `ulti 14` $lt.tilde$ `ulti pgan npg` 
+`ulti npg` $approx$ `ulti old strat` $lt$ `ulti 4` $lt$ `ulti nf` $approx$ `ulti nf npg` $approx$ `ulti 8` $lt.double$ `ulti 12` $lt.double$ \ $lt.double$ `ulti pgan` $lt.tilde$ `ulti 14` $lt.tilde$ `ulti pgan npg`

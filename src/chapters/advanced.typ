@@ -102,7 +102,7 @@ That works for both normal and hard mode (assuming you, like, check lefty often 
 
 There wont be such a point in analyzing the progress function, the only thing you need to know is that its progression is not constant and depends only on temperature. When the temperature of progress is reached, she will progress differently: the higher the temperature, the higher the progress.
 
-Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for 10 seconds.
+Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for the last 10 seconds of night.
 
 === General
 
@@ -110,5 +110,31 @@ You can teoretically stall any door animatronic and get power advantage, but it 
 
 == Powerpace formula
 
-nuh oh
+Power drain in Ultimatum is not linear for entire night. You spend less energy than average at the beginning(due coinfarming first 13 second) and end of the night(due Lefty and Jack-O-Chica edging)
+
+Also powerpace in Ultimatum depends on many other things, mostly on Lefty stage and temperature. To calculate powerpace simply, you can normalize the energy depending on the Lefty stage/temperature. (The most important thing to consider is the Lefty stage and the temperature can generally be ignored)
+
+To decrease Lefty progress by 1 stage you will need $approx 1%$ of power, so you can get the normalized power by subtracting the Lefty stage from it
+
+Powerpace values a smth like that:
+
+#let powerpacetab = {
+  table(
+  columns: 5,
+  table.header(
+    [*1 AM*],
+    [*2 AM*],
+    [*3 AM*],
+    [*4 AM*],
+    [*5 AM*],
+  ),
+  [$86$], [$68$], [$48$], [$31$], [$12$], 
+  )
+}
+
+#figure(
+    powerpacetab,
+    kind: table,
+    caption : [Powerpace for each hour for normalized power]
+) <powerpac:temp>
 
