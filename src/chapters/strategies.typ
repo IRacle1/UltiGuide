@@ -50,9 +50,40 @@ There is currently 2 beaten self imposeds for Ultimatum.
 
 That self imposed doesnt let you use Fan for cooling, so you forced to cool with AC, wasting more power. Gameplay wise that challenge slightly easier that regular Ultimatum, because you make less noice and auto counter Rockstar Freddy and Nighmare Chica.
 
+To know how much is Ultimatum No Fan is harder than regular Ultimatum, we need to calculate the difference between AC and Fan cooling powerwise.
 
+Lets define a 'temp cycle', A time for a temperature to up from 60 to 80, and from 80 to 60 by specific cooling device in seconds(Eq. @nofan:fancycle, @nofan:accycle)
+
+$ c_(f a n) = 20 + 20/(t_(f a n)) approx 31.1 $ <nofan:fancycle>
+$ c_(a c) = 20 + 20/(t_(a c)) approx 28.3  $ <nofan:accycle>
+
+After that we can found amount of 'temp cycles' in night(Eq. @nofan:fanamount, @nofan:acamount)
+
+$ a_(f a n) = 360 / c_(f a n) = 360 / 31.1 approx 11.57 $ <nofan:fanamount>
+$ a_(a c) = 360 / c_(a c) = 360 / 28.3 approx 12.7  $ <nofan:acamount>
+
+We can floor those values, assuming that we can let temperature go up in night end(in last 'temp cycle') _Plus, it doent rly affect the answer_
+
+$ a_(f a n) = 11 $ <nofan:fanamount:round>
+$ a_(a c) = 12 $ <nofan:acamount:round>
+
+And then we can found a whole working time of a cooling device, by multiplying amount of cycles by working time in cycle(Eq. @nofan:fanamount, @nofan:acamount)
+
+$ s_(f a n) = 11 dot 20/t_(f a n) approx 122.2 $ <nofan:fantime>
+$ s_(a c) = 12 dot 20/t_(a c) approx 100 $ <nofan:actime>
+
+and finally we can calculate power drain(in hard mode ofc), Fan takes 1 power drain, AC takes 1.5
+
+$ p_(f a n) = p_(h m)(s_(f a n)) approx -28.57 $ <nofan:fananswer>
+$ p_(a c) = 1.5 dot p_(h m)(s_(a c)) approx -35 $ <nofan:acanswer>
+
+We get difference is about 8%. Actially Ultimatum No Fan is around 7-8% Ultimatum greenrun.
+
+Also Power Generator is kinda useless in that self imposed. The most efficent way to use PG it combine it with Fan, and you cant do that in No Fan. You can use PG only at the start.
 
 === Phone Guy All Night (NPG)
+
+
 
 == Difficulties
 
@@ -65,8 +96,8 @@ So there:
 - `ulti old strat (= ulti 1)`
 - `ulti npg (= ulti 2-3)`
 - `ulti baseline (= ulti 4)` - _average Ultimatum gameplay without mistakes._
-- `ulti nf (= ulti 6-7)`
-- `ulti nf npg (= ulti 7-8)`
+- `ulti nf (= ulti 7-8)`
+- `ulti nf npg (= ulti 8-9)`
 - `ulti pgan (= ulti 11-12)`
 - `ulti pgan npg (= ulti 13-14)`
 

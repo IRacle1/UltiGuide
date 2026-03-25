@@ -243,7 +243,7 @@ Below is fan @temp:fan:fig and AC @temp:ac:fig temperature decrease pseudocodes 
 
 In converted expressions(Eq @temp:tools:eq):
 
-$ t_(f a n) = - 0.03 dot 60 = -1.8 \ t_(A C) = - 0.04 dot 60 = -2.4 $ <temp:tools:eq>
+$ t_(f a n) = - 0.03 dot 60 = -1.8 \ t_(a c) = - 0.04 dot 60 = -2.4 $ <temp:tools:eq>
 
 In normal mode AC is way better than fan. AC has the same power usage, but it cools temperature $approx 33%$ faster. However in hard more AC has 1.5 power drain, and fan becomes more effective power-wise.
 
@@ -410,7 +410,7 @@ Temperature change for 1 second with different tools(Eq. @all:temp:tools:eq)
 $ 
 t_(i d l e) = 1 \ 
 t_(f a n) = -1.8 \ 
-t_(A C) = -2.4 \
+t_(a c) = -2.4 \
 t_(h e a t) = 1.2 \
 $ <all:temp:tools:eq>
 
