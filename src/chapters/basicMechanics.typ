@@ -286,15 +286,6 @@ You also should know that unlike AC/Fan, idle temperature gain works with heater
     caption : [Temperature changes in different scenarios(per seconds)]
 ) <tab:temp>
 
-
-=== Jack-O-Chica
-
-`Jack-O-Chica` is the main temperature controller, she will progress on high temperature values($ >=90$ on normal mode, $ >=80$ on hard more) and kills you when you reach a certain progress.
-
-There wont be such a point in analyzing the progress function, the only thing you need to know is that its progression is not constant and depends only on temperature. When the temperature of progress is reached, she will progress differently: the higher the temperature, the higher the progress.
-
-Ill just tell you how long it takes for Jack-O-Chick to fully progress, for normal mode, starting with $90 degree$ and dont use any cooling tool, you can survive for $approx 12$ seconds, for hard mode starting from $80 degree$ you can survive $approx 13$ seconds. So in any case you let Jack-O-Chica progress for 10 seconds.
-
 == Lefty/GMB
 
 `Lefty` and `Global Music Box` (GMB) is the last mechanic that will be covered in this guide.

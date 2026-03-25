@@ -20,7 +20,7 @@
 
 = Introduction
 
-This guide, written more for fun, breaks down all the information needed to understand the optimal strategies for the Ultimatum and additional challenges(whole UCN Recode in general btw). I wrote this guide in a pseudo-scientific style not because it was necessary, but because I thought it would be funnier that way, and my native language is not English, so in some places that I deliberately wrote without a translator, the text will be terrible.
+This guide, written more for fun, breaks down all the information needed to understand the optimal strategies for the Ultimatum and additional challenges. I wrote this guide in a pseudo-scientific style not because it was necessary, but because I thought it would be funnier that way. And my native language is not English, so in some places that I deliberately wrote without a translator, the text can be 🥀.
 
 While understanding the strategies in this guide doesnt require any special knowledge, understanding proofs for some strats may require some basic math skills(But you can just ignore the proofs and take my word for it that everything in this guide is true).
 
@@ -30,6 +30,10 @@ the first chapter will include basic game breakdown, how everything works at a n
 
 #include "chapters/basicMechanics.typ"
 
-= Advanced tricks
+= Advanced conclusions
 
 #include "chapters/advanced.typ"
+
+= Gameplay
+
+#include "chapters/strategies.typ"
