@@ -138,4 +138,4 @@ Defenitions:
 
 And overall difficulties from easiest to hardest:
 
-`ulti npg` $approx$ `ulti old strat` $lt$ `ulti 4` $lt$ `ulti nf` $lt.tilde$ `ulti nf npg` $approx$ `ulti 8` $lt.double$ `ulti 12` $lt.double$ \ $lt.double$ `ulti 14` $lt.tilde$ `ulti pgan` $lt.tilde$ `ulti pgan npg`
+`ulti npg` $approx$ `ulti old strat` $lt.tilde$ `ulti 4` $lt$ `ulti nf` $lt.tilde$ `ulti nf npg` $approx$ `ulti 8` $lt.double$ `ulti 12` $lt.double$ \ $lt.double$ `ulti 14` $lt.tilde$ `ulti pgan` $lt.tilde$ `ulti pgan npg`
