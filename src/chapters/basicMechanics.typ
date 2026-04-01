@@ -100,7 +100,7 @@ So here his progress gain pseudocode @mm:gain:fig taken directly from decompiled
 
 #figure(
   image("../images/mmincrease.png"),
-  caption : [Clickteam expression for mm progress gain]
+  caption : [Clickteam expression for Music Man progress gain]
 ) <mm:gain:fig>
 
 where:
@@ -127,12 +127,12 @@ Now about decreasing his progress. Here his progress decrease pseudocodes, gener
 
 #figure(
   image("../images/mmdecreasenm.png"),
-  caption : [Clickteam expression for mm progress decrease on normal mode]
+  caption : [Clickteam expression for Music Man progress decrease on normal mode]
 ) <mm:decrease:nm:fig>
 
 #figure(
   image("../images/mmdecreasehm.png"),
-  caption : [Clickteam expression for additional mm progress decrease on hard mode]
+  caption : [Clickteam expression for additional Music Man progress decrease on hard mode]
 ) <mm:decrease:hm:fig>
 
 On hard mode Music Man has progress decrease nerf, so in hard mode code it additionally adds some value.
@@ -160,12 +160,12 @@ For silent ventilation we have different behavior for normal and hard modes. On 
 
 #figure(
   image("../images/mmsvnm.png"),
-  caption : [Clickteam expression for silent ventilation mm progress decrease on hard mode]
+  caption : [Clickteam expression for silent ventilation Music Man progress decrease on normal mode]
 ) <mm:sv:nm:fig>
 
 #figure(
   image("../images/mmsvhm.png"),
-  caption : [Clickteam expression for additional silent ventilation mm progress decrease on hard mode]
+  caption : [Clickteam expression for additional silent ventilation Music Man progress decrease on hard mode]
 ) <mm:sv:hm:fig>
 
 We are gonna to define constants $m^(s v)_(n m)$ and $m^(s v)_(h m)$, the amount of Music Man progress decrease with silent ventilation for 1 seconds on normal and hard modes respectively(Eq. @mm:sv:eq).
