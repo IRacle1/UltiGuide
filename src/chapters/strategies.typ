@@ -8,8 +8,6 @@ There is currently 3 different strategies for Ultimatum.
 
 === Old strategy
 
-=== Idea
-
 Old strategy is the first strategy for Ultimatum. Main idea of that strategy is to cycle tools like `[PG + Fan > SV > GMB]`, but this cycle is not entirely formal and it can be interrupted by various situations. You make a lot of noice by using `PG + Fan`, therefore you forced to do SV for Music Man after every `PG + Fan`. For Music Man special attack you stall him and use PG in that time. And at the night start you use PG always until first Music Man special attack.
 
 That strategy is objectively the worst because of ineffective use of PG. In the last section using PG not in Music Man special attack was proved to give power disadvantage. (This does not apply to the use of PG at the beginning of the night). Other things in strategy are not so bad actually. You can play Ultimatum like that and it wont be a lot difficult.
@@ -32,9 +30,9 @@ The only disadvantage for that strategy is power. I breakdown difficulties in de
 
 === Greenrun strategy
 
-Mathimatically the best strategy for making greenruns. It just fixes main old strategy problem and uses PG in most efficent way.
+Mathimatically the best strategy for greenruns. It just fixes main old strategy problem and uses PG in most efficent way.
 
-You still use PG at the start and while first Music Man special attack. But later you use PG *only* for Music Man abuse during his attack(and maybe before night end, if you have good Music Man pace). Tool management overall is not so important.
+You still use PG at the start and while first Music Man special attack. But later you use PG *only* for Music Man abuse during his attack(and maybe before night end, if you have good Music Man pace). After you finish Music Man attack, he starts the next attack on average after 40 seconds. In those 40 seconds his progress will get closer but wont go over 80 so his next attack will start as soon as possible(there are will be rare scenarios when Music Man somehow got more than 80 progress, so his attack got stalled, and you will have to use SV). Tool management overall is not so important.
 
 #link("https://youtu.be/_oJzSz9PodE")[
   Strat demonstration (by me😼)
