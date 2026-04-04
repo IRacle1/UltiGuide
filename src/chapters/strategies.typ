@@ -75,7 +75,7 @@ and finally we can calculate power drain(in hard mode ofc), Fan takes 1 power dr
 $ p_(f a n) = p_(h m)(s_(f a n)) approx -28.57 $ <nofan:fananswer>
 $ p_(a c) = 1.5 dot p_(h m)(s_(a c)) approx -35 $ <nofan:acanswer>
 
-We get difference is about 7.5%. You can get an accurate value by making the temperature cycle time approach zero, and the remainder will become less significant. So Ultimatum No Fan is around 5% Ultimatum greenrun.
+We get difference is about 7.5%. You can get an accurate value by making the temperature cycle time approach zero, and the remainder will become less significant. So Ultimatum No Fan is around 6-7% Ultimatum greenrun.
 
 Also Power Generator is kinda useless in that self imposed. The most efficent way to use PG it combine it with Fan, and you cant do that in No Fan. You can use PG only at the start.
 
@@ -119,8 +119,8 @@ So there(from easiest to hardest):
 - `ulti 0`
 - `ulti old strat (= ulti 1)`
 - `ulti npg (= ulti 3-4)`
-- `ulti nf (= ulti 5)`
-- `ulti nf npg (= ulti 7-8)`
+- `ulti nf (= ulti 6)`
+- `ulti nf npg (= ulti 9)`
 - `ulti pgan (= ulti 11-12)`
 - `ulti pgan npg (= ulti 13)`
 
