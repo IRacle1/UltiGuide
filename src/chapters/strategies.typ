@@ -120,7 +120,7 @@ So there(from easiest to hardest):
 - `ulti old strat (= ulti 1)`
 - `ulti npg (= ulti 3-4)`
 - `ulti nf (= ulti 6)`
-- `ulti nf npg (= ulti 9)`
+- `ulti nf npg (= ulti 8)`
 - `ulti pgan (= ulti 11-12)`
 - `ulti pgan npg (= ulti 13)`
 
