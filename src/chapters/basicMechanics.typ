@@ -81,20 +81,20 @@ Pretty low, $approx 4.5$ times lower than power drain with 1 usage. We use a sin
     caption : [Power drain in different scenarios]
 ) <tab:power>
 
-== Noice/Music Man
+== Noise/Music Man
 
-`Noice` is also important mechanic. Noice value is a non negative integer, There are couple scenarios when you can gain noice value:
-- Tools (2 noice for power generator, 1 noice for AC/fan/heater)
-- Phantom Mangle jumpscare (1 noice)
-- Phone guy missed call (1 noice)
-- Helpy jumpscare (5+ noice)
-- Lolbit ($0->6$ noice)
+`Noise` is also important mechanic. Noise value is a non negative integer, There are couple scenarios when you can gain noise value:
+- Tools (2 noise for power generator, 1 noise for AC/fan/heater)
+- Phantom Mangle jumpscare (1 noise)
+- Phone guy missed call (1 noise)
+- Helpy jumpscare (5+ noise)
+- Lolbit ($0->6$ noise)
 
-Noice itself doent do anything, it works only in combnination with `Music Man`. Music Man has progress from 0 to 100, he kill instantly kills you as soon as he reach $ >=100$ progress. So here is how it works:
+Noise itself doent do anything, it works only in combnination with `Music Man`. Music Man has progress from 0 to 100, he kill instantly kills you as soon as he reach $ >=100$ progress. So here is how it works:
 
-if you have 0 noice, his progress will decrease, if you have $ >0$ noice, his progress will increase linearly with respect to noice. And if you have `Silent ventilation` tool active, his progress additionally will be decreased(but active silent ventilation wont stop his noice progression).
+if you have 0 noise, his progress will decrease, if you have $ >0$ noise, his progress will increase linearly with respect to noise. And if you have `Silent ventilation` tool active, his progress additionally will be decreased(but active silent ventilation wont stop his noise progression).
 
-=== Noice Progression
+=== Noise Progression
 
 So here his progress gain pseudocode @mm:gain:fig taken directly from decompiled UCN Recode
 
@@ -105,7 +105,7 @@ So here his progress gain pseudocode @mm:gain:fig taken directly from decompiled
 
 where:
 - `Alterable Value E("Music Man")` - Music Man progression value.
-- `Alterable Value F("#Values")` - Noice value.
+- `Alterable Value F("#Values")` - Noise value.
 - `Alterable Value A("Music Man")` - Music Man AI value.
 
 In expression form (Eq. @mm:gain1:eq).
@@ -114,10 +114,10 @@ $ m_1 = m_0 + 0.015n dot (A I)/20 $ <mm:gain1:eq>
 
 Where:
 - $m_0$, $m_1$ - Old and new Music Man progress value.
-- $n$ - Noice value.
+- $n$ - Noise value.
 - $A I$ - Music Man AI value.
 
-Using that we can define function $m^(+)(n, a)$ - Music Man progression gain on $a$ ai value, from 1 second of $n, (n>0)$ noice value(Eq. @mm:gain2:eq):
+Using that we can define function $m^(+)(n, a)$ - Music Man progression gain on $a$ ai value, from 1 second of $n, (n>0)$ noise value(Eq. @mm:gain2:eq):
 
 $ m^(+)(n, a) = 0.015 dot 60 dot n dot a/20 = 0.9n dot a/20 $ <mm:gain2:eq>
 
@@ -137,11 +137,11 @@ Now about decreasing his progress. Here his progress decrease pseudocodes, gener
 
 On hard mode Music Man has progress decrease nerf, so in hard mode code it additionally adds some value.
 
-We are gonna to define constants $m^(-)_(n m)$ and $m^(-)_(h m)$, the amount of Music Man progress decrease (with 0 noice) for 1 seconds on normal and hard modes respectively(Eq. @mm:decrease:eq).
+We are gonna to define constants $m^(-)_(n m)$ and $m^(-)_(h m)$, the amount of Music Man progress decrease (with 0 noise) for 1 seconds on normal and hard modes respectively(Eq. @mm:decrease:eq).
 
 $ m^(-)_(n m) = -60 dot 0.03 = -1.8 \ m^(-)_(h m) = m^(-)_(n m) + 60 dot 0.025 = -1.8 + 1.5 = -0.3 $ <mm:decrease:eq>
 
-And we can make generic functions $m(n, a)$ - Music Man with $a$ AI progression change for 1 second with $n$ noice for normal and hard modes(Eq. @mm:progress:eq).
+And we can make generic functions $m(n, a)$ - Music Man with $a$ AI progression change for 1 second with $n$ noise for normal and hard modes(Eq. @mm:progress:eq).
 
 $
   m_(n m)(n, a) = cases(
@@ -180,18 +180,18 @@ Music man also have his `Special Attack` that forces you to do silent ventilatio
 - Cooldown for that attack is 44-66s (32-48s on hard mode).
 - Is soon as that timer reaches 0, Music Man will start check his progress every frame. If his progress is in $[20;80]$ range, he will start attack, otherwise he will wait until that condition will be satisfied.
 - Timer for attack itself is 15s(10s on hard mode)
-- Music Man still progresses by noice in that attack, and silent ventilation also decrease his progress. But his progress is capped in $[20;80]$ range
+- Music Man still progresses by noise in that attack, and silent ventilation also decrease his progress. But his progress is capped in $[20;80]$ range
 
 === Overall
 
-#let noicetab = {
+#let noisetab = {
   table(
   columns: 4,
   table.header(
-    [*0 noice (NM)*],
-    [*0 noice (HM)*],
-    [*1 noice (HM)*],
-    [*2 noice + SV (HM)*],
+    [*0 noise (NM)*],
+    [*0 noise (HM)*],
+    [*1 noise (HM)*],
+    [*2 noise + SV (HM)*],
   ),
   [$m_(n m)(0, 20)$], [$m_(h m)(0, 20)$], [$m_(h m)(1, 20)$], [$m_(h m)(2, 20) + m^(s v)_(h m)$],
   [$-1.8$], [$-0.3$], [$0.9$], [$1.8 - 6.9 = -5.1$],
@@ -199,7 +199,7 @@ Music man also have his `Special Attack` that forces you to do silent ventilatio
 }
 
 #figure(
-    noicetab,
+    noisetab,
     kind: table,
     caption : [Music Man progression in different scenarios(Music Man is on 20 AI)]
 ) <tab:power>
@@ -227,7 +227,7 @@ UCN Recode idle temperature gain is the same as in valilla UCN, 1$degree$ per se
 
 === AC/fan
 
-In normal mode, both AC and fan work with 1 usage and 1 noice. However in hard mode, AC power drain buffed by additional 0.5 usage(1.5 usage in total).
+In normal mode, both AC and fan work with 1 usage and 1 noise. However in hard mode, AC power drain buffed by additional 0.5 usage(1.5 usage in total).
 
 Below is fan @temp:fan:fig and AC @temp:ac:fig temperature decrease pseudocodes taken directly from decompiled UCN Recode.
 
@@ -249,7 +249,7 @@ In normal mode AC is way better than fan. AC has the same power usage, but it co
 
 === Heater
 
-`Heater` is another temperature tool, 1 usage, 1 noice, makes your temperature rise faster.
+`Heater` is another temperature tool, 1 usage, 1 noise, makes your temperature rise faster.
 
 Below is heater @temp:heater:fig temperature increase pseudocode taken directly from decompiled UCN Recode.
 
@@ -388,7 +388,7 @@ Power percentage gain for 1 second with power generator(Eq. @all:power:pg:eq)
 
 $ p_(g e n) = 0.054 $ <all:power:pg:eq>
 
-Music Man with $a$ AI value sound progression for 1 second with $n$ noice(Eq. @all:noice:mmp:eq)
+Music Man with $a$ AI value sound progression for 1 second with $n$ noise(Eq. @all:noise:mmp:eq)
 
 $
 m_(n m)(n, a) = cases(
@@ -399,11 +399,11 @@ m_(h m)(n, a) = cases(
   -0.3"," n = 0,
   0.9n a/20"," n > 0
   )
-$ <all:noice:mmp:eq>
+$ <all:noise:mmp:eq>
 
-Music Man progression decrease for 1 second with silent ventilation(Eq. @all:noice:sv:eq)
+Music Man progression decrease for 1 second with silent ventilation(Eq. @all:noise:sv:eq)
 
-$ m^(s v)_(n m) = -0.9 \ m^(s v)_(h m) = -6.9 $ <all:noice:sv:eq>
+$ m^(s v)_(n m) = -0.9 \ m^(s v)_(h m) = -6.9 $ <all:noise:sv:eq>
 
 Temperature change for 1 second with different tools(Eq. @all:temp:tools:eq)
 

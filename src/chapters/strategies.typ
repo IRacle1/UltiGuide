@@ -8,7 +8,7 @@ There is currently 3 different strategies for Ultimatum.
 
 === Old strategy
 
-Old strategy is the first strategy for Ultimatum. Main idea of that strategy is to cycle tools like `[PG + Fan > SV > GMB]`, but this cycle is not entirely formal and it can be interrupted by various situations. You make a lot of noice by using `PG + Fan`, therefore you forced to do SV for Music Man after every `PG + Fan`. For Music Man special attack you stall him and use PG in that time. And at the night start you use PG always until first Music Man special attack.
+Old strategy is the first strategy for Ultimatum. Main idea of that strategy is to cycle tools like `[PG + Fan > SV > GMB]`, but this cycle is not entirely formal and it can be interrupted by various situations. You make a lot of noise by using `PG + Fan`, therefore you forced to do SV for Music Man after every `PG + Fan`. For Music Man special attack you stall him and use PG in that time. And at the night start you use PG always until first Music Man special attack.
 
 That strategy is objectively the worst because of ineffective use of PG. In the last section using PG not in Music Man special attack was proved to give power disadvantage. (This does not apply to the use of PG at the beginning of the night). Other things in strategy are not so bad actually. You can play Ultimatum like that and it wont be a lot difficult.
 
@@ -46,7 +46,7 @@ There is currently 2 beaten self imposeds for Ultimatum.
 
 === No Fan (NPG)
 
-That self imposed doesnt let you use Fan for cooling, so you forced to cool with AC, wasting more power. Gameplay wise that challenge slightly easier that regular Ultimatum, because you make less noice and auto counter Rockstar Freddy and Nighmare Chica.
+That self imposed doesnt let you use Fan for cooling, so you forced to cool with AC, wasting more power. Gameplay wise that challenge slightly easier that regular Ultimatum, because you make less noise and auto counter Rockstar Freddy and Nighmare Chica.
 
 To know how much is Ultimatum No Fan is harder than regular Ultimatum, we need to calculate the difference between AC and Fan cooling powerwise.
 
