@@ -18,9 +18,9 @@ That strategy is objectively the worst because of ineffective use of PG. In the 
 
 === Easy (NPG) strategy
 
-Easiest or NPG strat is in my opinion the most easier way to play Ultimatum(and to get first win).
+Easiest or npg strat is in my opinion the most easier way to play Ultimatum(and to get first win).
 
-Core idea is to not use PG at all after beginning of the night. That makes gameplay a little easier since Music Man is no more an active thread. You can stall him but that doesnt important. And you can manage tools in your own way(like GMB + Fan combo which i mainly use).
+Core idea is to not use PG at all after beginning of the night. That makes gameplay a little easier since Music Man is no more an active thread. You can stall his special attack but that doesnt important. And you can manage tools in your own way(like `[ GMB + Fan]` at the same time which i mainly use).
 
 The only disadvantage for that strategy is power. I breakdown difficulties in details later.
 
@@ -40,11 +40,11 @@ You still use PG at the start and while first Music Man special attack. But late
 
 == Self imposeds
 
-I assume `self imposed` is a such way to play which provide a clear challenge.
+I assume `self imposed challenge`(or sic) is a such way to play which provide a clear challenge.
 
-There is currently 2 beaten self imposeds for Ultimatum.
+There is currently 3 unique self imposeds for Ultimatum.
 
-=== No Fan (NPG)
+=== No Fan
 
 That self imposed doesnt let you use Fan for cooling, so you forced to cool with AC, wasting more power. Gameplay wise that challenge slightly easier that regular Ultimatum, because you make less noise and auto counter Rockstar Freddy and Nighmare Chica.
 
@@ -65,7 +65,7 @@ We can floor those values, assuming that we can let temperature go up in night e
 $ a_(f a n) = 11 $ <nofan:fanamount:round>
 $ a_(a c) = 12 $ <nofan:acamount:round>
 
-And then we can found a whole working time of a cooling device, by multiplying amount of cycles by working time in cycle(Eq. @nofan:fanamount, @nofan:acamount)
+And then we can found a whole working time of a cooling device, by multiplying amount of cycles by working time in cycle(Eq. @nofan:fantime, @nofan:actime)
 
 $ s_(f a n) = 11 dot 20/t_(f a n) approx 122.2 $ <nofan:fantime>
 $ s_(a c) = 12 dot 20/t_(a c) approx 100 $ <nofan:actime>
@@ -79,31 +79,68 @@ We get difference is about 7.5%. You can get an accurate value by making the tem
 
 Also Power Generator is kinda useless in that self imposed. The most efficent way to use PG it combine it with Fan, and you cant do that in No Fan. You can use PG only at the start.
 
-In general i dont like that challenge, because it affects only greenruning, but No Fan can be a build up for a bigger fish.
+In general i dont like that challenge because it affects only greenruning, but No Fan can be a build up for a bigger fish.
 
 #link("https://youtu.be/yLxxLwFyaOw")[
   NF NPG demonstration (by serdnALof)
 ]
 
-=== Phone Guy All Night (NPG)
+=== Phone Guy All Night
 
 The formal hardest single self imposed Ultimatum challenge. I dont recommend you to try it if you have $lt 12%$ greenrun PB. 
 
-So core part of that challenge is to dont mute Phone Guy call, which makes you get passive +1 noise value and annoying Phone Guy sound for entire night. That moves Music Man from C tier to a SS+, making him a hardest animatronic. Core of tool cycle doesnt change, but you forced to deal with Music Man like he is the second Lefty. And overall tools become extremly tight. There is two main ways to calm Music Man: Using Fan mainly with SV, or mainly with GMB. You can chose your own way to deal with Music Man, but for me it is better to use `[Fan + SV]`, because with 2 noise value Music Man can kill you pretty fast. However combining Fan with tools doesnt make Ultimatum PGAN tool management free like in regular Ultimatum. Most of situations will require you to think and analyze Lefty/Music Man/Temperature pace and use whatever you need. I highly recommend you to keep Lefty at stage 2-3 most of the time, because there will be tight situations with Music Man special attack and other gameplay.
+So core part of that challenge is to dont mute Phone Guy call, which makes you get passive +1 noise value and annoying Phone Guy sound for entire night. That moves Music Man from C tier to a SS+, making him a hardest animatronic. Core of tool cycle doesnt change, but you forced to deal with Music Man like he is the second Lefty. And overall tools become extremly tight. There is two main ways to calm Music Man: Using Fan mainly with SV, or mainly with GMB. You can chose your own way to deal with Music Man, but for me it is better to use `[Fan + SV]`, because with 2 noise value Music Man can kill you pretty fast. However combining Fan with tools doesnt make Ultimatum pgan tool management free like in regular Ultimatum. Most of situations will require you to think and analyze Lefty/Music Man/Temperature pace and use whatever you need. I highly recommend you to keep Lefty at stage 2-3 most of the time, because there will be tight situations with Music Man special attack and other gameplay.
 
-And there are specific thing about Music Man abusing. Firstly, you are forced to do abuses due to impossible power, so you cant just use SV for 10 second once per hour. And second, in PGAN Music Man special attack doent just happends like in Ultimatum greenruns. Most of time time Music Man progress will be $80+$, and it will stall his attack. You cant keep Music Man at lower progress values, in that case abuse dont give you any power profit. You should have mental timer to know if Music Man can start his attack, counter any tool threads like Lefty, heater ducts, Rockstar Freddy and others, and start his attack by lowering his progress below 80. In that moment dont overuse SV too much, or you counter Music Man instantly.
+And there are specific thing about Music Man abusing. Firstly, you are forced to do abuses due to impossible power, so you cant just use SV for 10 second once per hour. And second, in pgan Music Man special attack doent just happends like in Ultimatum greenruns. Most of time time Music Man progress will be $80+$, and it will stall his attack. You cant keep Music Man at lower progress values, in that case abuse dont give you any power profit. You should have mental timer to know if Music Man can start his attack, counter any tool threads like Lefty, heater ducts, Rockstar Freddy and others, and start his attack by lowering his progress below 80. In that moment dont overuse SV too much, or you counter Music Man instantly.
 
-At the beginning of the night you should use PG for 2-3 seconds(skipping first MM abuse because it gives disadvantage in PGAN). Phone Guy should spawn in $22-42$ second, forcing first Music Man special attack after. During that attack you can use PG a little. After that, there will be a filler part that plays exactly like a base Ultimatum, until MM reaches 80 progress. This is where the difficulty begins, and what I described below. Its better to catch each MM abuse as quickly as possible and use PG to the maximum during that time. This is basically all you need to know about strategy.
+At the beginning of the night you should use PG for 2-3 seconds(skipping first MM abuse because it gives disadvantage in pgan). Phone Guy should spawn in $22-42$ second, forcing first Music Man special attack after. During that attack you can use PG a little. After that, there will be a filler part that plays exactly like a base Ultimatum, until MM reaches 80 progress. This is where the difficulty begins, and what I described below. Its better to catch each MM abuse as quickly as possible and use PG to the maximum during that time. This is basically all you need to know about strategy.
 
 #link("https://youtu.be/cmuSKUMm8p8")[
   PGAN demonstration (by me😈😈)
 ]
 
-PGAN NPG gameplay wise is the same, buffing only greenrun part. Do the same thing as you do in regular PGAN but without PG xd. Anyway you should do Music Man abuses as well because they like frezee his progresson. PGAN NPG actually not so difficult comparing to PGAN.
+=== No Clicking Helpy
+
+Analog for pgan, due to not clicking on Helpy you forced to take every his jumpscare. Helpy generates $8$ noise for $4$ seconds, so from Helpy jumpscare Music Man on 20 AI will gain $4 dot m_{h m}(8, 20) = 4 dot 8 dot 0.9 = 32 dot 0.9 = 28.8$, also difficult part is Helpy jumpscare itself, during that you cant see everyting and it forces you to slow down and wait.
+
+The general stragery is to allign and force Music Man special attacks to Helpy jumpscares. Stall Music Man attack by keeping him $80+$ progress, Helpy gives you $10$ seconds to click him, so after around $5-7$ seconds you see him you will use SV and force Music Man attack, so Helpy jumpscare wont affect Music Man progress. Beacuse of Music Man attack cooldown is around $40$ seconds, and Helpy spawn time after jumpscare is around $10$ seconds, you can counter one in every $2-4$ times Helpy spawns.
+
+I got about 3:30 on pace in 30 minutes, and it _seems_ to be easier than pgan. Im not gonna finish it and beat it, so go on if you want top 15 verification.
+
+== Self-Imposeds Combinations
+
+=== Combinations with NPG
+
+For most of self-imposeds removing Power Generator doent do anyting gameplay-wise. 
+- For nf npg it makes power harder by $1%$. That is barely harder than nf.
+- For pgan npg power becomes $2%$ harder. Do the same thing as you do in regular pgan but without PG. Anyway you should do Music Man abuses as well because they still frezee his progresson. pgan npg actually not so difficult comparing to pgan.
+- NCH npg is actually different, by removing PG you remove variety to manage Music Man progress as you want.
+
+#link("https://youtu.be/yLxxLwFyaOw")[
+  NF NPG demonstration (by serdnALof)
+]
 
 #link("https://youtu.be/9Im5Mu9zmeA")[
   PGAN NPG demonstration (by me😈😈)
 ]
+
+=== PGAN NF (NPG)
+
+The hardest combination that is surely possible. Gameplay really differs from pgan. Because you cant use fan, you cant cool office while doing GMB/SV(`[Fan + SV/GMB]` combo). You forced to keep Lefty on early stages and cool with AC if you had no other priorities. Ofc you still should abuse Music Man. If you lost your Lefty/Music Man/temperature focus it will be very hard to recover.
+
+I would say greenrun wise difference between base ulti and pgan is the same as between pgan and pgan nf npg. In base ulti nf makes power like $6%$ greenrun, but pgan nf has $4-5%$ harder power than pgan, due to overall less noise from AC than from Fan, so you use SV slightly less often.
+
+Npg adds the same difficulty as in pgan npg, so power becomes additionaly becomes $1-2%$ harder.
+
+In my experience, greenrun level required for pgan nf npg is at least $17.5%$💀☠️🎃.
+
+#link("https://youtu.be/zjdi9I3Bsf4")[
+  PGAN NF NPG demonstration (by me😈😈)
+]
+
+=== PGAN NCH
+
+No. Maybe? Idk.
 
 == Difficulties
 
@@ -123,6 +160,8 @@ So there(from easiest to hardest):
 - `ulti nf npg (= ulti 8)`
 - `ulti pgan (= ulti 11-12)`
 - `ulti pgan npg (= ulti 13)`
+- `ulti pgan nf (= ulti 15-16)`
+- `ulti pgan nf npg (= ulti 17.5)`
 
 === Overall
 
@@ -133,7 +172,8 @@ Defenitions:
 - $lt.tilde$ - Slightly harder.
 - $lt$ - Significatly harder.
 - $lt.double$ - Way harder. 
+- $lt.triple$ - 💀☠️💀. 
 
 And overall difficulties from easiest to hardest:
 
-`ulti npg` $approx$ `ulti old strat` $lt.tilde$ `ulti 4` $lt$ `ulti nf` $approx$ `ulti 7` $lt.tilde$ `ulti nf npg` $approx$ `ulti 8` $lt.double$ \ $lt.double$ `ulti 12` $lt.double$ `ulti 14` $lt.tilde$ `ulti pgan` $lt.tilde$ `ulti pgan npg`
+`npg` $approx$ `greenrun strat` $lt.tilde$ `old strat` $lt$ `nf` $lt.tilde$ `nf npg` $lt.triple$ `pgan` $lt.tilde$ `pgan npg` $lt.double$ `pgan nf` $lt$ `pgan nf npg`
