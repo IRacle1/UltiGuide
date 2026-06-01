@@ -114,7 +114,7 @@ I got about 3:30 on pace in 30 minutes, and it _seems_ to be easier than pgan. I
 For most of self-imposeds removing Power Generator doent do anyting gameplay-wise. 
 - For nf npg it makes power harder by $1%$. That is barely harder than nf.
 - For pgan npg power becomes $2%$ harder. Do the same thing as you do in regular pgan but without PG. Anyway you should do Music Man abuses as well because they still frezee his progresson. pgan npg actually not so difficult comparing to pgan.
-- NCH npg is actually different, by removing PG you remove variety to manage Music Man progress as you want.
+- nch npg is actually different, by removing PG you remove variety to manage Music Man progress as you want.
 
 #link("https://youtu.be/yLxxLwFyaOw")[
   NF NPG demonstration (by serdnALof)
